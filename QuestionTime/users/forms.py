@@ -4,5 +4,5 @@ from users.models import CustomUser
 
 class CustomUserForm(RegistrationForm):
 
-    class meta(RegistrationForm.Meta):
+    class Meta(RegistrationForm.Meta):
         model = CustomUser
