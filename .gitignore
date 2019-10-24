@@ -5,6 +5,11 @@ __pycache__/
 
 # Webpack-Bundle-Tracker output
 webpack-stats.json
+QuestionTime/frontend/webpack-stats.json
+
+*.iml
+.idea
+.DS_Store
 
 # C extensions
 *.so
