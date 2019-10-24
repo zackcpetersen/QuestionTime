@@ -14,13 +14,13 @@ module.exports = {
             .filename('bundle.js');
 
         config.optimization
-        	.splitChunks(false);
+            .splitChunks(false);
 
         config.resolve.alias
             .set('__STATIC__', 'static');
 
         config.devServer
-            // the first 3 lines of the following code have been added to the configuration
+        // the first 3 lines of the following code have been added to the configuration
             .public('http://127.0.0.1:8080')
             .host('127.0.0.1')
             .port(8080)
