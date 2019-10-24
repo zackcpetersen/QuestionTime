@@ -3,6 +3,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Webpack-Bundle-Tracker output
+webpack-stats.json
+QuestionTime/frontend/webpack-stats.json
+
+*.iml
+.idea
+.DS_Store
+
 # C extensions
 *.so
 

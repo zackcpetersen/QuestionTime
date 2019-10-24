@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <title>QuestionTime</title>
+{% extends 'base.html' %}
+{% block style %}
     <style>
         html, body {
             height: 100%;
             font-family: 'Playfair Display', serif;
         }
+
         .auth-box {
             border: 3px solid lightgray;
             border-radius: 10px;
@@ -20,27 +14,30 @@
             width: 600px;
             margin: auto;
         }
+
         .login-form-container {
             width: 300px;
             margin: auto;
         }
+
         .registration-form-container {
             width: 400px;
             margin: auto;
         }
+
         .outer-area {
             margin-top: 100px;
         }
     </style>
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
 
     <div class="outer-area">
         <div class="auth-box text-center">
-            {% block content %}
+            {% block auth %}
             {% endblock %}
         </div>
     </div>
 
-</body>
-</html>
+{% endblock %}
