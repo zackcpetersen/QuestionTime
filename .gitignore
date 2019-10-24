@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Webpack-Bundle-Tracker output
+webpack-stats.json
+
 # C extensions
 *.so
 
