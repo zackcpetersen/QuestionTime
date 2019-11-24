@@ -138,10 +138,10 @@
                 }
             },
             async deleteAnswer(answer) {
-                let endpoint = `/api/answers/${answer.id}/`
+                let endpoint = `/api/answers/${answer.id}/`;
                 try {
-                    await apiService(endpoint, "DELETE")
-                    this.$delete(this.answers, this.answers.indexOf(answer))
+                    await apiService(endpoint, "DELETE");
+                    this.$delete(this.answers, this.answers.indexOf(answer));
                     this.userHasAnswered = false
                 }
                 catch (err) {

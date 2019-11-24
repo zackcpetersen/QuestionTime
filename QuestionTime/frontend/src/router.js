@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
+import AnswerEditor from "./views/AnswerEditor";
 import Home from "./views/Home.vue";
 import Question from "./views/Question";
 import QuestionEditor from "./views/QuestionEditor";
@@ -25,6 +26,11 @@ export default new Router({
             name: "question-editor",
             component: QuestionEditor
         },
-
+        {
+            path: "/answer/:id",
+            name: "answer-editor",
+            component: AnswerEditor,
+            props: true
+        }
     ]
 });
