@@ -2,6 +2,10 @@
     <div class="single-question mt-2">
         <div class="container">
             <h1>{{ question.content }}</h1>
+            <QuestionActions
+                    v-if="isQuestionAuthor"
+                    :slug="question.slug"
+            />
             <p class="mb-0">Posted by:
                 <span class="author-name">{{ question.author }}</span>
             </p>
@@ -62,6 +66,7 @@
 <script>
     import {apiService} from "@/common/api.service";
     import Answer from "@/components/Answer";
+    import QuestionActions from "@/components/QuestionActions";
 
     export default {
         name: "Question",
@@ -72,6 +77,7 @@
             }
         },
         components: {
+            QuestionActions,
             Answer
         },
         data() {
@@ -85,6 +91,11 @@
                 next: null,
                 loadingAnswers: false,
                 requestUser: null,
+            }
+        },
+        computed: {
+            isQuestionAuthor() {
+                return this.question.author === this.requestUser;
             }
         },
         methods: {
@@ -143,8 +154,7 @@
                     await apiService(endpoint, "DELETE");
                     this.$delete(this.answers, this.answers.indexOf(answer));
                     this.userHasAnswered = false
-                }
-                catch (err) {
+                } catch (err) {
                     console.log(err)
                 }
             }
